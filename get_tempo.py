@@ -14,6 +14,7 @@ for filename in os.listdir(dir):
                 'filename': filename,
                 'tempo': tempo[0],
             })
+        os.rename(file_path, os.path.join(dir, filename.strip()))
 
 df = pd.DataFrame(data)
-df.to_csv('output/song_tempos_and_beat_times.csv', index=False)
+df.to_csv('output/song_tempos.csv', index=False)
